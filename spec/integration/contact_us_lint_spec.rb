@@ -27,8 +27,8 @@ describe 'Contact Us page' do
 
     context "when valid" do
       before do
-        fill_in 'Email', :with => 'test@example.com'
-        fill_in 'Message', :with => 'howdy'
+        fill_in 'contact_us_contact_email', :with => 'test@example.com'
+        fill_in 'contact_us_contact_message', :with => 'howdy'
         click_button 'Submit'
       end
 
@@ -51,8 +51,8 @@ describe 'Contact Us page' do
     context "when invalid" do
       context "Email and message are invalid" do
         before do
-          fill_in 'Email', :with => 'a'
-          fill_in 'Message', :with => ''
+          fill_in 'contact_us_contact_email', :with => 'a'
+          fill_in 'contact_us_contact_message', :with => ''
           click_button 'Submit'
         end
 

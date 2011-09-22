@@ -1,6 +1,24 @@
 <h2><%= t('.contact_us') %></h2>
-<%= semantic_form_for @contact, :url => contacts_path do |f| %>
-  <%= f.input :email, :label => t('.email') %>
-  <%= f.input :message, :as => :text, :label => t('.message') %>
-  <%= f.commit_button t('.submit'), :button_html => { :alt => t('.submit'), :id => 'contact_us_contact_submit', :title => t('.submit') } %>
+<%= form_for @contact, :url => contacts_path do |f| %>
+  <%- if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= "#{pluralize(@contact.errors.count, "error")} prohibited this doc from being saved:" %></h2>
+      <ul>
+        <%- @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label t('.email') %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label t('.message') %>
+    <%= f.text_area :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit t('.submit'), :id => "contact_us_contact_submit" %>
+  </div>
 <% end %>

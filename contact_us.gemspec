@@ -23,6 +23,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "simplecov", "~> 0.4.2"
   s.add_development_dependency "sqlite3", "~> 1.3.3"
 
-  s.add_runtime_dependency "formtastic", ">= 1.2.0"
   s.add_runtime_dependency "rails", ">= 3.0.0"
 end
