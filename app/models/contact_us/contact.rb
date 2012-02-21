@@ -2,7 +2,7 @@ class ContactUs::Contact
   include ActiveModel::Conversion
   include ActiveModel::Validations
 
-  attr_accessor :email, :message
+  attr_accessor :email, :message, :name, :organization
 
   validates :email,   :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i },
                       :presence => true
